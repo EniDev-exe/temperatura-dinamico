@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color-card: #ffffff;
+  --primary-color: #3b82f6;
+  --text-color: #333333;
+  --social-color: black;
+  --social-color-hover: rgb(56, 55, 55);
+  --bg-url: url(./assets/bg-mobile.jpg);
+}
+
+/* Fundo da página */
+body {
+  background: var(--bg-url) no-repeat top center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fonte moderna */
+}
+
+/* Container principal*/
+#container {
+  width: 90%; /* Mais adaptável em telas pequenas */
+  max-width: 480px;
+  background-color: var(--bg-color-card);
+  margin: 0 auto;
+
+  /* Estilos do cartão moderno */
+  padding: 32px 24px;
+  border-radius: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+  /* Centraliza icon e info verticalmente um sobre o outro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  min-height: 400px;
+}
+
+#icon {
+  color: var(--primary-color);
+}
+
+#icon ion-icon {
+  font-size: 80px; /* Ícone grande e visível */
+}
+
+/* Informações de clima */
+#info {
+  text-align: center;
+  color: var(--text-color);
+}
+
+#info p:nth-child(1) {
+  /* Nome da Cidade */
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-color);
+}
+
+#info p:nth-child(2) {
+  /* Temperatura */
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+  line-height: 1;
+}
+
+#info p:nth-child(3) {
+  /* Descrição do tempo */
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+/*Icones de rede social*/
+#social ion-icon {
+  text-decoration: none;
+  font-size: 40px;
+  padding: 20px;
+  margin-top: 20px;
+  color: var(--social-color);
+  transition: 0.2s;
+
+  display: inline-block;
+  transform-origin: center;
+}
+
+#social ion-icon:hover {
+  text-decoration: none;
+  color: var(--social-color-hover);
+
+  transform: scale(1.125);
+}
+
+/*media queries*/
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+}
